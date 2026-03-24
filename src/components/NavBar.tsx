@@ -69,34 +69,17 @@ export const NavBar = () => {
             <input type="text" placeholder={t('nav.search')} />
           </div>
 
-          <div className="nav-actions">
-            <div className="lang-switcher">
-              <button className="lang-btn" onClick={() => setShowLangs(!showLangs)}>
-                <Languages size={20} />
-                <span>{LANGUAGES.find(l => l.code === i18n.language)?.name || 'हिन्दी'}</span>
-                <ChevronDown size={14} />
-              </button>
-              {showLangs && (
-                <div className="lang-dropdown glass">
-                  {LANGUAGES.map(lang => (
-                    <button key={lang.code} onClick={() => changeLanguage(lang.code)}>
-                      {lang.name}
-                    </button>
-                  ))}
-                </div>
-              )}
+          <div className="navbar-actions">
+            <div className="action-item">
+              <User size={20} />
+              <span>{t('nav.account')}</span>
             </div>
-
-            <button className="nav-user">
-               <User size={20} />
-               <span>{t('nav.user')}</span>
-               <ChevronDown size={14} />
-            </button>
-            <div className="nav-divider"></div>
-            <Link href="/cart" className="nav-cart">
-              <div className="cart-badge">3</div>
-              <ShoppingCart size={22} />
-              <span>{t('nav.cart')}</span>
+            <Link href="/cart" className="cart-btn">
+              <div className="cart-icon">
+                <ShoppingCart size={22} />
+                <span className="cart-count">3</span>
+              </div>
+              <span className="cart-text">{t('nav.cart')}</span>
             </Link>
           </div>
 

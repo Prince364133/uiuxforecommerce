@@ -51,7 +51,7 @@ export const CATEGORIES = [
 export const BEST_SELLERS = [
   {
     id: "bs1",
-    name: "पावर टिलर हेतु 2 कतार सीडर (6 सीड प्लेट सहित)",
+    name: "Power Tiller 2-Row Seeder (incl. 6 seed plates)",
     price: 7562,
     originalPrice: 9999,
     discount: "24% OFF",
@@ -59,7 +59,7 @@ export const BEST_SELLERS = [
   },
   {
     id: "bs2",
-    name: "1 एचपी आटा चक्की",
+    name: "1 HP Domestic Flour Mill (Atta Chakki)",
     price: 14113,
     originalPrice: 21999,
     discount: "36% OFF",
@@ -67,7 +67,7 @@ export const BEST_SELLERS = [
   },
   {
     id: "bs3",
-    name: "1 घन मीटर बायोगैस प्लांट",
+    name: "1 Cubic Meter Biogas Plant",
     price: 32603,
     originalPrice: 41999,
     discount: "22% OFF",
@@ -75,7 +75,7 @@ export const BEST_SELLERS = [
   },
   {
     id: "bs4",
-    name: "पावर वीडर स्टार्टर किट",
+    name: "Power Weeder Starter Kit (170FB Engine)",
     price: 29999,
     originalPrice: 38499,
     discount: "22% OFF",
@@ -83,7 +83,7 @@ export const BEST_SELLERS = [
   },
   {
     id: "bs5",
-    name: "बैटरी चालित चारा कटिंग मशीन",
+    name: "Battery Operated Backpack Chaff Cutter",
     price: 15429,
     originalPrice: 24999,
     discount: "38% OFF",
@@ -91,7 +91,7 @@ export const BEST_SELLERS = [
   },
   {
     id: "bs6",
-    name: "मैनुअल रेकिंग मशीन",
+    name: "Manual Raking Machine",
     price: 9496,
     originalPrice: 11999,
     discount: "21% OFF",

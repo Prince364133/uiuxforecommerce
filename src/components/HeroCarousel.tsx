@@ -51,16 +51,6 @@ export const HeroCarousel = () => {
 
           <button className="carousel-control prev" onClick={prevSlide}><ChevronLeft /></button>
           <button className="carousel-control next" onClick={nextSlide}><ChevronRight /></button>
-
-          <div className="carousel-indicators">
-            {BANNERS.map((_, i) => (
-              <div 
-                key={i} 
-                className={`dot ${current === i ? 'active' : ''}`}
-                onClick={() => setCurrent(i)}
-              ></div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
