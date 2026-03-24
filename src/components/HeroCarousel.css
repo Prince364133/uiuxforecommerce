@@ -1,0 +1,109 @@
+.hero-carousel {
+  padding: 2rem 0; /* Add some vertical space */
+}
+
+.carousel-container {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  border-radius: 32px; /* Curved radius as requested */
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.carousel-slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.carousel-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%);
+  display: flex;
+  align-items: center;
+}
+
+.slide-content {
+  max-width: 500px;
+  color: white;
+}
+
+.slide-content h2 {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  letter-spacing: -2px;
+}
+
+.slide-content p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+  z-index: 10;
+}
+
+.carousel-control:hover { background: var(--primary); border-color: var(--primary); }
+
+.prev { left: 2rem; }
+.next { right: 2rem; }
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.75rem;
+  z-index: 10;
+}
+
+.dot {
+  width: 32px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.dot.active { background: var(--primary); width: 48px; }
+
+@media (max-width: 1024px) {
+  .hero-carousel { height: 360px; }
+  .slide-content h2 { font-size: 2.5rem; }
+}
+
+@media (max-width: 640px) {
+  .hero-carousel { height: 280px; }
+  .slide-content h2 { font-size: 2rem; }
+  .carousel-control { display: none; }
+}

@@ -1,0 +1,107 @@
+.ad-banner {
+  padding: 4rem 0;
+}
+
+.ad-content.typography-ad {
+  background: linear-gradient(135deg, #005A32 0%, #004d2b 100%);
+  height: auto;
+  min-height: 300px;
+  padding: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  color: white;
+  border: none;
+  box-shadow: 0 30px 60px rgba(0, 90, 50, 0.2);
+}
+
+.ad-left {
+  flex: 1.5;
+}
+
+.ad-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.ad-left h2 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 1.5rem;
+}
+
+.ad-left h2 span {
+  color: var(--accent);
+}
+
+.ad-left p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.ad-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2.5rem;
+}
+
+.ad-promo {
+  text-align: right;
+  border-right: 4px solid var(--accent);
+  padding-right: 2rem;
+}
+
+.promo-pill {
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.ad-promo h3 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+.btn.white {
+  background: white;
+  color: var(--primary);
+  border: none;
+  padding: 1.2rem 2.5rem;
+}
+
+.ad-decoration {
+  position: absolute;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.d1 { width: 400px; height: 400px; top: -100px; left: -100px; }
+.d2 { width: 300px; height: 300px; bottom: -50px; right: -50px; }
+
+@media (max-width: 1024px) {
+  .ad-content.typography-ad {
+    flex-direction: column;
+    padding: 3rem;
+    gap: 3rem;
+    text-align: center;
+  }
+  .ad-left h2 { font-size: 2.5rem; }
+  .ad-right { align-items: center; }
+  .ad-promo { border-right: none; border-top: 4px solid var(--accent); padding: 1.5rem 0 0 0; text-align: center; }
+}

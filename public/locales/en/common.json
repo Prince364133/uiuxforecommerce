@@ -1,0 +1,51 @@
+{
+  "nav": {
+    "search": " Search for Products, Equipments and More",
+    "user": "Prince",
+    "more": "More",
+    "cart": "Cart",
+    "categories": {
+      "for_you": "For You",
+      "machines": "Machines",
+      "aromatics": "Aromatics",
+      "agri_tech": "Agri-Tech",
+      "irrigation": "Irrigation",
+      "nutrients": "Nutrients",
+      "energy": "Energy",
+      "supplies": "Supplies"
+    }
+  },
+  "hero": {
+    "shop_now": "Shop Now",
+    "banner1": { "title": "AGROMATIC PRO", "subtitle": "THE FUTURE OF HARVESTING" },
+    "banner2": { "title": "PURE ESSENCE", "subtitle": "100% ORGANIC AROMATICS" },
+    "banner3": { "title": "SMART TECH", "subtitle": "DATA-DRIVEN AGRICULTURE" },
+    "banner4": { "title": "SMART IRRIGATION", "subtitle": "ECO-FRIENDLY WATER SOLUTIONS" },
+    "banner5": { "title": "SOIL ANALYTICS", "subtitle": "SCIENCE-BASED FARMING" }
+  },
+  "features": {
+    "chat_now": "Chat Now",
+    "learn_more": "Learn More",
+    "agri_ai": {
+      "title": "AgriAI Assistant",
+      "desc": "Predict crop cycles and identify soil deficiencies using our neural engine trained on 40 years of harvest data.",
+      "prompt": "What is the optimal nitrogen level for winter wheat in Zone 7?"
+    },
+    "valuator": {
+      "title": "Asset Valuator",
+      "desc": "Instant market appraisal for your fleet using real-time auction feeds and machine health metrics.",
+      "action": "Appraise Fleet"
+    }
+  },
+  "best_sellers": {
+    "title": "Best Sellers"
+  },
+  "quick_cats": {
+    "title": "Quick Categories",
+    "manage_all": "Manage All"
+  },
+  "products": {
+    "title": "Premium Collection",
+    "view_details": "View Details"
+  }
+}
