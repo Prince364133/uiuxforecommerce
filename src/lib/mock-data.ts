@@ -69,7 +69,7 @@ export const BEST_SELLERS = [
     discount: "36% OFF",
     rating: 4.9,
     reviews: 212,
-    image: "/assets/bs_chakki.png"
+    image: "/banners/hero_premium.png"
   },
   {
     id: "bs3",
@@ -80,7 +80,7 @@ export const BEST_SELLERS = [
     discount: "22% OFF",
     rating: 4.7,
     reviews: 88,
-    image: "/assets/bs_biogas.png"
+    image: "/banners/drip_kit.png"
   },
   {
     id: "bs4",
@@ -91,7 +91,7 @@ export const BEST_SELLERS = [
     discount: "22% OFF",
     rating: 4.6,
     reviews: 145,
-    image: "/assets/bs_weeder.png"
+    image: "/banners/hero_smart.png"
   },
   {
     id: "bs5",
@@ -102,7 +102,7 @@ export const BEST_SELLERS = [
     discount: "38% OFF",
     rating: 4.8,
     reviews: 320,
-    image: "/assets/bs_cutter.png"
+    image: "/products/pruning_kit.png"
   },
   {
     id: "bs6",
@@ -113,7 +113,7 @@ export const BEST_SELLERS = [
     discount: "21% OFF",
     rating: 4.5,
     reviews: 67,
-    image: "/assets/bs_raker.png"
+    image: "/products/moisture_meter.png"
   },
   {
     id: "bs7",
@@ -124,7 +124,7 @@ export const BEST_SELLERS = [
     discount: "26% OFF",
     rating: 4.9,
     reviews: 45,
-    image: "/assets/bs_seed_drill.png"
+    image: "/banners/agromatic_banner_2_aromatics_1774354902752.png"
   },
   {
     id: "bs8",
@@ -135,7 +135,7 @@ export const BEST_SELLERS = [
     discount: "21% OFF",
     rating: 5.0,
     reviews: 12,
-    image: "/assets/bs_solar_pump.png"
+    image: "/banners/agromatic_banner_4_irrigation.png"
   },
   {
     id: "bs9",
@@ -146,7 +146,7 @@ export const BEST_SELLERS = [
     discount: "25% OFF",
     rating: 4.8,
     reviews: 198,
-    image: "/assets/bs_sprayer.png"
+    image: "/products/smart_agri_sensor_1774354131455.png"
   },
   {
     id: "bs10",
@@ -157,7 +157,7 @@ export const BEST_SELLERS = [
     discount: "27% OFF",
     rating: 4.7,
     reviews: 89,
-    image: "/assets/bs_soil_kit.png"
+    image: "/banners/agromatic_banner_5_lab.png"
   },
   {
     id: "bs11",
@@ -168,6 +168,6 @@ export const BEST_SELLERS = [
     discount: "30% OFF",
     rating: 4.9,
     reviews: 112,
-    image: "/assets/bs_brush_cutter.png"
+    image: "/banners/agromatic_banner_3_tech_1774354918293.png"
   }
 ];

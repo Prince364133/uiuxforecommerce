@@ -26,7 +26,7 @@ export const FeatureCards = () => {
           </div>
         </div>
         <div className="feature-bg">
-          <img src="/assets/agri_ai_card.png" alt="AgriAI Assistant" />
+          <img src="/products/smart_agri_sensor_1774354131455.png" alt="AgriAI Assistant" />
         </div>
       </div>
 
@@ -45,7 +45,7 @@ export const FeatureCards = () => {
           </button>
         </div>
         <div className="feature-bg tractor-bg">
-          <img src="/assets/valuator_card.png" alt="Asset Valuator" />
+          <img src="/banners/agromatic_banner_3_tech_1774354918293.png" alt="Asset Valuator" />
         </div>
       </div>
     </section>

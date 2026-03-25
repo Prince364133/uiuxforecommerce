@@ -11,10 +11,16 @@
   margin-bottom: 4rem;
 }
 
-.footer-logo {
-  height: 50px;
-  margin-bottom: 1.5rem;
-}
+.footer-text-logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.03em;
+  display: block;
+  margin-bottom: 1rem;
+
+
 
 .footer-col p {
   color: #666;

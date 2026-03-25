@@ -31,7 +31,7 @@ export const Insights = () => {
             <h3>{t('insights.soil.title')}</h3>
             <p>{t('insights.soil.desc')}</p>
             <div className="soil-graph-wrapper">
-              <img src="/assets/insights_soil_report.png" alt="Soil Report Graph" />
+              <img src="/banners/agromatic_banner_5_lab.png" alt="Soil Report Graph" />
             </div>
           </div>
           <div className="card-footer">

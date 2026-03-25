@@ -12,7 +12,7 @@ export const Footer = () => {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-col about">
-            <img src="/assets/logo.png" alt="Agromatic" className="footer-logo" />
+            <span className="footer-text-logo">Agromatic.</span>
             <p>{t('footer.about')}</p>
             <div className="footer-socials">
               <a href="#"><MessageCircle size={20} /></a>
