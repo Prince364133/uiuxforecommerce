@@ -27,18 +27,33 @@
     "chat_now": "Chat Now",
     "learn_more": "Learn More",
     "agri_ai": {
-      "title": "AgriAI Assistant",
-      "desc": "Predict crop cycles and identify soil deficiencies using our neural engine trained on 40 years of harvest data.",
-      "prompt": "What is the optimal nitrogen level for winter wheat in Zone 7?"
+      "label": "Precision Farming",
+      "title": "AI Assistant at your service.",
+      "desc": "Analyze soil health, predict crop yields, and automate pest control with our proprietary neural networks.",
+      "action": "Start Diagnosing"
     },
     "valuator": {
-      "title": "Asset Valuator",
-      "desc": "Instant market appraisal for your fleet using real-time auction feeds and machine health metrics.",
-      "action": "Appraise Fleet"
+      "label": "Real-time Valuation",
+      "title": "Know your Tractor Value.",
+      "desc": "Instant AI-driven market assessment for your fleet. Get real-time appraisal based on market trends.",
+      "action": "Get Valuation"
     }
   },
   "best_sellers": {
-    "title": "Best Sellers"
+    "title": "Our Latest Products",
+    "items": {
+      "bs1": { "name": "Power Tiller 2-Row Seeder", "desc": "High-efficiency seeder with 6 replaceable plates." },
+      "bs2": { "name": "Domestic Flour Mill (Atta Chakki)", "desc": "1 HP energy-efficient mill for home use." },
+      "bs3": { "name": "1 Cubic Meter Biogas Plant", "desc": "Sustainable energy solution for small farms." },
+      "bs4": { "name": "Power Weeder Starter Kit", "desc": "170FB Engine powered heavy duty weeding kit." },
+      "bs5": { "name": "Backpack Chaff Cutter", "desc": "Battery operated portable cutting solution." },
+      "bs6": { "name": "Manual Raking Machine", "desc": "Durable steel frame raking tool." },
+      "bs7": { "name": "Automatic Precision Seed Drill", "desc": "Next-gen pneumatic drilling technology." },
+      "bs8": { "name": "Enterprise Solar Water Pump", "desc": "High-flow panels for large-scale irrigation." },
+      "bs9": { "name": "Ergonomic Backpack Sprayer", "desc": "Uniform pressure delivery for crop protection." },
+      "bs10": { "name": "Smart Soil Health Scanner", "desc": "Instant NPK and pH lab-grade field testing." },
+      "bs11": { "name": "Heavy Duty Brush Cutter", "desc": "Professional grade multi-terrain tool." }
+    }
   },
   "quick_cats": {
     "title": "Quick Categories",
@@ -47,5 +62,80 @@
   "products": {
     "title": "Premium Collection",
     "view_details": "View Details"
+  },
+  "hero_carousel": {
+    "explore": "Explore Now",
+    "learn": "Learn More",
+    "slides": {
+      "1": { "title": "Agri-AI Intelligence", "subtitle": "Neural engines predicting your next big harvest." },
+      "2": { "title": "Precision Soil Tech", "subtitle": "Real-time moisture and nutrient analysis." },
+      "3": { "title": "Modern Harvesting", "subtitle": "Efficiency meets sustainability in the field." },
+      "4": { "title": "Aerial Monitoring", "subtitle": "Sky-high insights for ground-level success." }
+    }
+  },
+  "ad": {
+    "pill": "STAKEHOLDER PREVIEW",
+    "title_part1": "TRANSFORMING",
+    "title_part2": "INDIAN AGRICULTURE",
+    "desc": "The Agromatic Ecosystem: Integrating Smart AI, Precision Engineering, and Direct Marketplace Access.",
+    "promo_title": "MEGA HARVEST SALE",
+    "promo_desc": "30% DISCOUNT ON SMART TOOLS",
+    "btn": "Explore Framework"
+  },
+  "footer_note": {
+    "delivery": { "title": "Fast Farm Delivery", "p": "Direct delivery to your farm via Agromatic Logistics network in 2-3 business days." },
+    "quality": { "title": "Certified Quality", "p": "Every product is tested in our local Agromatic Labs for soil compatibility and safety." },
+    "support": { "title": "24/7 Expert Support", "p": "Access our crop scientists and tech experts anytime via the built-in AI Assistant." },
+    "call": { "title": "Direct Call", "p": "Need help? Call our regional support desk at 1800-AGROMATIC for instant help." }
+  },
+  "footer": {
+    "about": "Empowering 100 million farmers across India with AI-driven insights, premium tech, and a direct marketplace for a better harvest legacy.",
+    "products": "Products",
+    "quick_links": "Quick Links",
+    "contact": "Contact Support",
+    "copyright": "© 2026 Agromatic Platforms Pvt Ltd. All rights reserved."
+  },
+  "recommended": {
+    "title": "Recommended for You",
+    "desc": "Based on your farm profile and soil type in Pune, MH",
+    "filters": {
+      "all": "All Products",
+      "seeds": "All Seeds",
+      "pesticides": "Pesticides",
+      "tools": "Tools"
+    },
+    "items": {
+      "1": { "cat": "Premium Seeds", "title": "Hybrid Cotton S-6" },
+      "2": { "cat": "Tech Tools", "title": "Digital Moisture Meter" },
+      "3": { "cat": "Nutrients", "title": "Nitro-Plus 5L" },
+      "4": { "cat": "Equipment", "title": "Pro Pruning Kit" }
+    }
+  },
+  "harvest_combos": {
+    "title": "Harvest Combos",
+    "limited": "Limited Time",
+    "save": "Save",
+    "items": {
+      "1": { "title": "Spring Sowing Master Pack: Wheat & Corn", "tag": "25% OFF" },
+      "2": { "title": "Ultimate Crop Defense: Pesticide Bundle", "tag": "15% OFF" },
+      "3": { "title": "Smart Water: IoT Drip Kit for 1 Acre", "tag": "HOT DEAL" }
+    }
+  },
+  "insights": {
+    "yield": {
+      "title": "Real-time Yield Analytics",
+      "desc": "Harness the power of AI to predict harvest quality weeks before the first combine enters the field.",
+      "action": "Access Dashboard"
+    },
+    "soil": {
+      "title": "The 2024 Soil Report",
+      "desc": "An in-depth analysis of global micronutrient shifts across temperate zones.",
+      "action": "Download PDF"
+    },
+    "community": {
+      "title": "Precision Community",
+      "desc": "Join over 50,000 agronomists sharing data to improve global food security.",
+      "action": "Connect Now"
+    }
   }
 }

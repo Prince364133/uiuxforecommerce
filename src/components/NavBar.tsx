@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Menu, Search, ShoppingCart, User, ChevronDown, Sprout, Settings, Droplets, Microscope, Wind, FlaskConical, Sun, Box, Languages } from 'lucide-react';
+import { Menu, Search, ShoppingCart, User, Languages } from 'lucide-react';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import './NavBar.css';
@@ -14,17 +14,6 @@ const LANGUAGES = [
   { code: 'mr', name: 'मराठी' },
   { code: 'ta', name: 'தமிழ்' },
   { code: 'gu', name: 'ગુજરાતી' },
-];
-
-const NAV_CATEGORIES = [
-  { name: 'For You', icon: Sprout },
-  { name: 'Machines', icon: Settings },
-  { name: 'Aromatics', icon: Droplets },
-  { name: 'Agri-Tech', icon: Microscope },
-  { name: 'Irrigation', icon: Wind },
-  { name: 'Nutrients', icon: FlaskConical },
-  { name: 'Energy', icon: Sun },
-  { name: 'Supplies', icon: Box },
 ];
 
 export const NavBar = () => {
@@ -45,23 +34,14 @@ export const NavBar = () => {
     setShowLangs(false);
   };
 
-  const categories = [
-    { name: t('nav.categories.for_you'), icon: Sprout },
-    { name: t('nav.categories.machines'), icon: Settings },
-    { name: t('nav.categories.aromatics'), icon: Droplets },
-    { name: t('nav.categories.agri_tech'), icon: Microscope },
-    { name: t('nav.categories.irrigation'), icon: Wind },
-    { name: t('nav.categories.nutrients'), icon: FlaskConical },
-    { name: t('nav.categories.energy'), icon: Sun },
-    { name: t('nav.categories.supplies'), icon: Box },
-  ];
-
   return (
     <header className={`navbar-wrapper glass ${isScrolled ? 'is-scrolled' : ''}`}>
       <div className="container">
         <div className="navbar-top">
           <Link href="/" className="logo">
-            <img src="/assets/logo.png" alt="Agromatic Logo" />
+            <div className="logo-text">
+              Agromatic<span>.</span>
+            </div>
           </Link>
 
           <div className="search-container">
@@ -69,35 +49,47 @@ export const NavBar = () => {
             <input type="text" placeholder={t('nav.search')} />
           </div>
 
-          <div className="navbar-actions">
-            <div className="action-item">
-              <User size={20} />
-              <span>{t('nav.account')}</span>
+          <div className="nav-actions">
+            <div className="lang-switcher">
+              <button 
+                className="lang-btn" 
+                onClick={() => setShowLangs(!showLangs)}
+                aria-label="Change Language"
+              >
+                <Languages size={20} />
+                <span>{LANGUAGES.find(l => l.code === i18n.language)?.name || 'English'}</span>
+              </button>
+              
+              {showLangs && (
+                <div className="lang-dropdown glass shadow-lg">
+                  {LANGUAGES.map((lang) => (
+                    <button 
+                      key={lang.code} 
+                      onClick={() => changeLanguage(lang.code)}
+                      className={i18n.language === lang.code ? 'active' : ''}
+                    >
+                      {lang.name}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
-            <Link href="/cart" className="cart-btn">
-              <div className="cart-icon">
-                <ShoppingCart size={22} />
-                <span className="cart-count">3</span>
-              </div>
-              <span className="cart-text">{t('nav.cart')}</span>
+
+            <div className="nav-divider"></div>
+
+            <button className="nav-user">
+              <User size={20} />
+              <span>{t('nav.user')}</span>
+            </button>
+
+            <Link href="/cart" className="nav-cart">
+              <ShoppingCart size={22} />
+              <div className="cart-badge">3</div>
+              <span>{t('nav.cart')}</span>
             </Link>
           </div>
 
           <button className="mobile-menu-btn"><Menu size={24} /></button>
-        </div>
-      </div>
-
-      {/* Bottom Row: Icons Category Navigation */}
-      <div className="navbar-categories">
-        <div className="container categories-scroll">
-           {categories.map((cat, i) => (
-             <div key={i} className={`cat-item ${i === 0 ? 'active' : ''}`}>
-               <div className="cat-icon-box">
-                 <cat.icon size={20} />
-               </div>
-               <span>{cat.name}</span>
-             </div>
-           ))}
         </div>
       </div>
     </header>

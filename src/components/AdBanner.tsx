@@ -9,26 +9,31 @@ export const AdBanner = () => {
 
   return (
     <section className="ad-banner container">
-      <div className="ad-content typography-ad">
+      <div className="ad-content">
         <div className="ad-left">
-          <span className="ad-label">STAKEHOLDER PREVIEW</span>
-          <h2>TRANSFORMING <span>INDIAN AGRICULTURE</span></h2>
-          <p>The Agromatic Ecosystem: Integrating Smart AI, Precision Engineering, and Direct Marketplace Access.</p>
-        </div>
-        <div className="ad-right">
-           <div className="ad-promo">
-              <div className="promo-pill">EST. 2026</div>
-              <div className="promo-text">
-                <h3>MEGA HARVEST SALE</h3>
-                <p>30% DISCOUNT ON SMART TOOLS</p>
-              </div>
-           </div>
-           <button className="btn btn-primary white">Explore Framework</button>
+          <div className="ad-pill">{t('ad.pill')}</div>
+          <h2>
+            {t('ad.title_part1')} <br />
+            <span className="accent-text">{t('ad.title_part2')}</span>
+          </h2>
+          <p className="ad-desc">
+            {t('ad.desc')}
+          </p>
         </div>
         
-        {/* Decorative Graphic Elements (CSS only) */}
-        <div className="ad-decoration d1"></div>
-        <div className="ad-decoration d2"></div>
+        <div className="ad-right">
+          <div className="ad-promo-box">
+            <div className="promo-date">
+              EST. 2026
+              <span className="vertical-divider"></span>
+            </div>
+            <div className="promo-info">
+              <h3>{t('ad.promo_title')}</h3>
+              <p>{t('ad.promo_desc')}</p>
+            </div>
+          </div>
+          <button className="ad-btn">{t('ad.btn')}</button>
+        </div>
       </div>
     </section>
   );

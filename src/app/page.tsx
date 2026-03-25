@@ -3,12 +3,18 @@
 import React, { useState } from 'react';
 import { NavBar } from '@/components/NavBar';
 import { HeroCarousel } from '@/components/HeroCarousel';
-import { QuickCategories } from '@/components/QuickCategories';
-import { FeatureCards } from '@/components/FeatureCards'; // NEW
-import { AdBanner } from '@/components/AdBanner'; // NEW
-import { BestSellers } from '@/components/BestSellers'; // NEW
+import { QuickSearch } from '@/components/QuickSearch';
+import { MachineCategories } from '@/components/MachineCategories';
+import { FeatureHighlights } from '@/components/FeatureHighlights';
+import { HarvestCombos } from '@/components/HarvestCombos';
+import { RecommendedForYou } from '@/components/RecommendedForYou';
+import { AdBanner } from '@/components/AdBanner';
+import { BestSellers } from '@/components/BestSellers';
+import { Insights } from '@/components/Insights';
 import { ProductCard } from '@/components/ProductCard';
-import { ChatBot } from '@/components/ChatBot'; // NEW
+import { FooterNote } from '@/components/FooterNote';
+import { Footer } from '@/components/Footer';
+import { ChatBot } from '@/components/ChatBot';
 import { PRODUCTS, CATEGORIES } from '@/lib/mock-data';
 import { Layout, Settings, Droplets, Cpu, Sprout } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -27,11 +33,13 @@ export default function Home() {
     <main>
       <NavBar />
       <HeroCarousel />
-      
-      {/* Feature Highlight Section Below Hero */}
-      <FeatureCards />
-      
-      <QuickCategories />
+      <QuickSearch />
+      <MachineCategories />
+      <FeatureHighlights />
+      <RecommendedForYou />
+      <HarvestCombos />
+
+      <AdBanner />
       
       <section className="products-section container">
         <div className="section-header">
@@ -56,39 +64,36 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="grid grid-2 grid-3 grid-4">
-          {filteredProducts.map(product => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+        <div className="products-container">
+          <div className="products-scroll">
+            {filteredProducts.map(product => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Ad Space Section */}
-      <AdBanner />
-
-      {/* Best Sellers Section */}
       <BestSellers />
+      <Insights />
 
-      <footer className="footer container">
-        <div className="footer-content glass">
-          <p>© 2026 Agromatic Store. Premium Agri-Tech Excellence.</p>
-        </div>
-      </footer>
+      <FooterNote />
+      <Footer />
 
       {/* AI Floating ChatBot */}
       <ChatBot />
 
       <style jsx>{`
         .products-section {
-          padding: 4rem 0;
+          padding: 6rem 0;
         }
         .section-header {
           display: flex;
           justify-content: space-between;
           align-items: flex-end;
-          margin-bottom: 3rem;
+          margin-bottom: 3.5rem;
           gap: 2rem;
         }
+// ... rest of styles
         .sh-left h2 {
           font-size: 2.25rem;
           margin-bottom: 0.5rem;
@@ -128,23 +133,33 @@ export default function Home() {
           border-color: var(--primary);
         }
 
-        .footer {
-          padding: 4rem 1.5rem;
+        .products-container {
+          position: relative;
+          margin-top: 2rem;
         }
-        .footer-content {
-          padding: 2rem;
-          border-radius: var(--radius-lg);
-          text-align: center;
-          color: var(--text-muted);
-          font-size: 0.9rem;
-          font-weight: 500;
+        .products-scroll {
+          display: flex;
+          gap: 1.5rem;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          padding: 1rem 0 2rem;
+          scrollbar-width: none;
+        }
+        .products-scroll::-webkit-scrollbar { display: none; }
+        .products-scroll > :global(*) {
+          flex: 0 0 calc(25% - 1.15rem);
+          scroll-snap-align: start;
         }
 
         @media (max-width: 1024px) {
-          .section-header {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+          .products-scroll > :global(*) { flex: 0 0 75%; }
+          .cat-tab {
+            padding: 0.75rem 1.25rem;
+            font-size: 0.95rem;
+            border-width: 2px;
+          }
+          .cat-tab.active {
+            box-shadow: 0 4px 12px rgba(0, 90, 50, 0.2);
           }
         }
       `}</style>

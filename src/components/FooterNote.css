@@ -1,0 +1,43 @@
+.footer-note-wrapper {
+  padding: 4rem 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin-top: 4rem;
+}
+
+.footer-note-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+}
+
+.note-card {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.note-icon {
+  color: #005a32;
+  flex-shrink: 0;
+}
+
+.note-text h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.note-text p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .footer-note-content { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  .footer-note-content { grid-template-columns: 1fr; gap: 2rem; }
+}
