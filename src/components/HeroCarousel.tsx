@@ -5,11 +5,21 @@ import './HeroCarousel.css';
 import { ArrowRight, Cpu, Sprout, ShieldCheck, Zap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
+interface Slide {
+  id: number;
+  type: 'image' | 'icon';
+  image?: string;
+  icon?: React.ReactNode;
+  title: string;
+  subtitle: string;
+  bgColor: string;
+}
+
 export const HeroCarousel = () => {
   const { t } = useTranslation('common');
   const [current, setCurrent] = useState(0);
 
-  const SLIDES = [
+  const SLIDES: Slide[] = [
     {
       id: 1,
       type: 'image',

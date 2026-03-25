@@ -1,5 +1,5 @@
 .quick-search {
-  margin: -2.5rem auto 3rem;
+  margin: 4rem auto 3rem; /* Increased spacing from hero */
   position: relative;
   z-index: 10;
 }
@@ -104,16 +104,30 @@
 }
 
 @media (max-width: 1024px) {
-  .quick-search { margin-top: 2rem; }
+  .quick-search { margin-top: 1.5rem; margin-bottom: 2rem; }
   .qs-wrapper {
-    flex-direction: column;
-    padding: 1.5rem;
-    align-items: stretch;
-    gap: 1.25rem;
-    border-radius: 32px;
+    flex-direction: row; /* Inline mobile search */
+    justify-content: space-between;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    gap: 0.5rem;
+    border-radius: 99px;
+    align-items: center;
   }
   .qs-divider { display: none; }
-  .qs-main { padding-bottom: 0.5rem; border-bottom: 1px solid #eee; }
-  .qs-location { padding-bottom: 0.5rem; }
-  .qs-submit-btn { width: 100%; border-radius: 16px; padding: 1.15rem; font-size: 1rem; }
+  .qs-location { order: 2; width: auto; margin: 0; }
+  .qs-loc-text { display: none; } /* Hide location text on small mobile */
+  .qs-submit-btn { 
+    order: 3; 
+    padding: 0.75rem; 
+    border-radius: 99px; 
+    min-width: 44px; 
+    height: 44px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+  }
+  .qs-submit-btn span { display: none; }
+  .qs-main { order: 1; flex: 1; padding: 0; border: none; }
+  .qs-filter-btn { display: none; } /* Simplify mobile */
+  .qs-input { font-size: 0.9rem; }
 }

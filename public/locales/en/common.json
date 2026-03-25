@@ -137,5 +137,25 @@
       "desc": "Join over 50,000 agronomists sharing data to improve global food security.",
       "action": "Connect Now"
     }
+  },
+  "categories": {
+    "machines": {
+      "title": "Agricultural Machinery",
+      "labels": {
+        "livestock": "Livestock Mall",
+        "agri": "Agri Mall",
+        "machines": "Agri Machines",
+        "poultry": "Poultry Solution",
+        "cotton": "Cotton Solution",
+        "animal": "Animal Care",
+        "solar": "Solar Tech",
+        "protection": "Crop Protection"
+      }
+    }
+  },
+  "search": {
+    "placeholder": "Search for seeds, machines, or chemicals...",
+    "button": "Search",
+    "filters": "Filters"
   }
 }

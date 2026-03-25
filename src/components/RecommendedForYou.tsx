@@ -2,97 +2,140 @@
 
 import React, { useState } from 'react';
 import './RecommendedForYou.css';
-import { Plus } from 'lucide-react';
+import { Plus, Check, ShoppingBag, Leaf, Droplets, Shield, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export const RecommendedForYou = () => {
   const { t } = useTranslation('common');
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activePhase, setActivePhase] = useState('sowing');
+  const [selectedItems, setSelectedItems] = useState<number[]>([1, 2]);
 
   const RECOMMENDED = [
     {
       id: 1,
-      category: t('recommended.items.1.cat'),
-      title: t('recommended.items.1.title'),
-      price: '₹850',
+      category: "Premium Seeds",
+      title: "Hybrid Cotton S-6",
+      price: 850,
       image: '/products/hybrid_cotton.png',
-      filter: 'seeds'
+      phase: 'sowing',
+      match: 98,
+      icon: <Leaf size={14} />
     },
     {
       id: 2,
-      category: t('recommended.items.2.cat'),
-      title: t('recommended.items.2.title'),
-      price: '₹3,200',
+      category: "Soil Tech",
+      title: "Digital Moisture Meter",
+      price: 3200,
       image: '/products/moisture_meter.png',
-      filter: 'tools'
+      phase: 'sowing',
+      match: 95,
+      icon: <Droplets size={14} />
     },
     {
       id: 3,
-      category: t('recommended.items.3.cat'),
-      title: t('recommended.items.3.title'),
-      price: '₹1,150',
+      category: "Nutrients",
+      title: "Nitro-Plus 5L",
+      price: 1150,
       image: '/products/nitro_plus.png',
-      filter: 'nutrients'
+      phase: 'growth',
+      match: 92,
+      icon: <Sparkles size={14} />
     },
     {
       id: 4,
-      category: t('recommended.items.4.cat'),
-      title: t('recommended.items.4.title'),
-      price: '₹2,499',
+      category: "Crop Defense",
+      title: "Pro Pruning Kit",
+      price: 2499,
       image: '/products/pruning_kit.png',
-      filter: 'tools'
+      phase: 'protection',
+      match: 89,
+      icon: <Shield size={14} />
     }
   ];
 
-  const FILTERS = [
-    { id: 'all', label: t('recommended.filters.all') },
-    { id: 'seeds', label: t('recommended.filters.seeds') },
-    { id: 'pesticides', label: t('recommended.filters.pesticides') },
-    { id: 'tools', label: t('recommended.filters.tools') }
+  const PHASES = [
+    { id: 'sowing', label: "Phase 1: Sowing", icon: <Leaf size={16} /> },
+    { id: 'growth', label: "Phase 2: Growth", icon: <Sparkles size={16} /> },
+    { id: 'protection', label: "Phase 3: Protection", icon: <Shield size={16} /> }
   ];
 
-  const filteredProducts = activeFilter === 'all' 
-    ? RECOMMENDED 
-    : RECOMMENDED.filter(p => p.filter === activeFilter);
+  const toggleItem = (id: number) => {
+    setSelectedItems(prev => 
+      prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
+    );
+  };
+
+  const filteredProducts = RECOMMENDED.filter(p => p.phase === activePhase);
+  const totalValue = RECOMMENDED.filter(p => selectedItems.includes(p.id)).reduce((sum, p) => sum + p.price, 0);
 
   return (
     <section className="recommended-for-you container">
-      <div className="rfy-container">
-        <div className="rfy-header">
-          <div className="rfy-title">
-            <h2>{t('recommended.title')}</h2>
-            <p>{t('recommended.desc')}</p>
-          </div>
-          <div className="rfy-filters">
-            {FILTERS.map((f) => (
-              <button 
-                key={f.id}
-                className={`filter-btn ${activeFilter === f.id ? 'active' : ''}`}
-                onClick={() => setActiveFilter(f.id)}
-              >
-                {f.label}
-              </button>
-            ))}
+      <div className="builder-header">
+        <div className="builder-title-layer">
+          <div className="builder-badge">PRECISION BUILDER</div>
+          <h2>{t('recommended.title') || "Build Your 2024 Farm Strategy"}</h2>
+          <p>Optimized for your soil profile in <strong>Pune, MH</strong></p>
+        </div>
+        <div className="builder-action-layer">
+          <div className="bundle-summary-pill">
+            <div className="summary-details">
+              <span className="summary-count">{selectedItems.length} Products</span>
+              <span className="summary-amount">₹{totalValue.toLocaleString()}</span>
+            </div>
+            <button className="bundle-add-btn">
+              <ShoppingBag size={18} />
+              <span>Add All to Cart</span>
+              <div className="btn-save-tag">SAVE 15%</div>
+            </button>
           </div>
         </div>
+      </div>
 
-        <div className="rfy-scroll">
-          {filteredProducts.map((product) => (
-            <div key={product.id} className="rfy-card" data-cat={product.filter}>
-              <div className="rfy-image">
-                <img src={product.image} alt={product.title} />
-              </div>
-              <div className="rfy-info">
-                <span className="rfy-cat">{product.category}</span>
-                <h4>{product.title}</h4>
-              </div>
-              <div className="rfy-footer">
-                <span className="rfy-price">{product.price}</span>
-                <button className="add-btn"><Plus size={18} /></button>
+      <div className="builder-phase-nav">
+        {PHASES.map((p) => (
+          <button 
+            key={p.id}
+            className={`phase-item ${activePhase === p.id ? 'active' : ''}`}
+            onClick={() => setActivePhase(p.id)}
+          >
+            <div className="phase-icon-circle">{p.icon}</div>
+            <span>{p.label}</span>
+          </button>
+        ))}
+      </div>
+
+      <div className="builder-direct-grid">
+        {filteredProducts.map((product) => (
+          <div 
+            key={product.id} 
+            className={`builder-product-card ${selectedItems.includes(product.id) ? 'is-selected' : ''}`}
+            onClick={() => toggleItem(product.id)}
+          >
+            <div className="card-match-badge">
+              <Sparkles size={12} />
+              <span>{product.match}% Match</span>
+            </div>
+            <div className="card-visual">
+              <img src={product.image} alt={product.title} />
+              <div className="card-select-check">
+                <Check size={24} />
               </div>
             </div>
-          ))}
-        </div>
+            <div className="card-details">
+              <div className="card-top-row">
+                {product.icon}
+                <span className="card-cat-label">{product.category}</span>
+              </div>
+              <h4 className="card-name">{product.title}</h4>
+              <div className="card-bottom-row">
+                <span className="card-price-val">₹{product.price.toLocaleString()}</span>
+                <div className={`card-toggle-btn ${selectedItems.includes(product.id) ? 'checked' : ''}`}>
+                  {selectedItems.includes(product.id) ? <Check size={18} /> : <Plus size={18} />}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
